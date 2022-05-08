@@ -1,3 +1,4 @@
+import { SeriesComponent } from './pages/series/series.component';
 import { ComicsComponent } from './pages/comics/comics.component';
 import { CharactersComponent } from './pages/characters/characters.component';
 import { NgModule } from '@angular/core';
@@ -11,6 +12,10 @@ const routes: Routes = [
   {
     path: 'quadrinhos',
     component: ComicsComponent,
+  },
+  {
+    path: 'series',
+    component: SeriesComponent,
   },
 ];
 

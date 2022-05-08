@@ -1,12 +1,12 @@
+import { HttpHeaders, HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { environment } from 'src/environments/environment';
-import { HttpHeaders, HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
 })
-export class CharactersService {
+export class SerieService {
   private publicKey = environment.publicKey;
   private apiMarvel = environment.apiMarvel;
   private httpOptions = {
@@ -15,11 +15,9 @@ export class CharactersService {
 
   constructor(private http: HttpClient) {}
 
-  fetchCaracters(): Observable<any> {
+  fetchSeries(): Observable<any> {
     return this.http.get<any>(
-      this.apiMarvel.concat(
-        'characters?limit=50&orderBy=-name&apikey=' + this.publicKey
-      ),
+      this.apiMarvel.concat('series?apikey=' + this.publicKey),
       this.httpOptions
     );
   }

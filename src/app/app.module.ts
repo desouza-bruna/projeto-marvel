@@ -10,9 +10,10 @@ import { CoreModule } from './core/core.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CharactersComponent } from './pages/characters/characters.component';
 import { ComicsComponent } from './pages/comics/comics.component';
+import { SeriesComponent } from './pages/series/series.component';
 
 @NgModule({
-  declarations: [AppComponent, CharactersComponent, ComicsComponent],
+  declarations: [AppComponent, CharactersComponent, ComicsComponent, SeriesComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

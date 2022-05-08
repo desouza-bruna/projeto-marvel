@@ -1,0 +1,14 @@
+<app-progress-bar *ngIf="!series"></app-progress-bar>
+<div class="content" *ngIf="series">
+  <div fxLayoutAlign="center" fxLayout="row wrap" fxLayoutGap="16px grid">
+    <div
+      fxFlex="25%"
+      fxFlex.xs="100%"
+      fxFlex.md="33%"
+      fxFlex.sm="50%"
+      *ngFor="let serie of filteredSeries"
+    >
+      <app-character-card [character]="serie"></app-character-card>
+    </div>
+  </div>
+</div>

@@ -18,13 +18,12 @@
       >
         Personagens
       </a>
-      <a
-        mat-list-item
-        routerLink="/quadrinhos"
-        [routerLink]="['/quadrinhos']"
-        routerLinkActive="active"
-        >Quadrinhos</a
-      >
+      <a mat-list-item [routerLink]="['/quadrinhos']" routerLinkActive="active">
+        Quadrinhos
+      </a>
+      <a mat-list-item [routerLink]="['/series']" routerLinkActive="active">
+        Séries
+      </a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -53,6 +52,9 @@
         </a>
         <a mat-button [routerLink]="['/quadrinhos']" routerLinkActive="active">
           Quadrinhos
+        </a>
+        <a mat-button [routerLink]="['/series']" routerLinkActive="active">
+          Séries
         </a>
       </div>
     </mat-toolbar>
