@@ -1,0 +1,14 @@
+<app-progress-bar *ngIf="characters.length == 0"></app-progress-bar>
+<div class="content" *ngIf="characters">
+  <div fxLayoutAlign="center" fxLayout="row wrap" fxLayoutGap="16px grid">
+    <div
+      fxFlex="30%"
+      fxFlex.xs="100%"
+      fxFlex.md="33%"
+      fxFlex.sm="50%"
+      *ngFor="let character of filteredCharacter"
+    >
+      <app-character-card [character]="character"></app-character-card>
+    </div>
+  </div>
+</div>

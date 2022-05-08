@@ -27,13 +27,15 @@
       >
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>ProjetoMarvel</span>
+      <span class="marvelLogo">
+        <img src="assets/img/logo_marvel.png" />
+      </span>
       <span class="spacer"></span>
       <div class="menuLinks" *ngIf="!(isHandset$ | async)">
-        <a mat-button href="#">Home</a>
-        <a mat-button href="#">Personagens</a>
+        <a mat-button href="#"> Personagens </a>
+        <a mat-button href="#">Séries</a>
         <a mat-button href="#">Filmes</a>
-        <a mat-button href="#">Quadrinhos</a>
+        <a mat-button href="#"> Quadrinhos </a>
       </div>
     </mat-toolbar>
     <ng-content></ng-content>

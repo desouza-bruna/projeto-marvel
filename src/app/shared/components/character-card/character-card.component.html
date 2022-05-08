@@ -1,0 +1,29 @@
+<mat-card class="card">
+  <mat-card-header>
+    <mat-card-title>{{ character.name }}</mat-card-title>
+  </mat-card-header>
+  <img
+    mat-card-image
+    src="{{ character.thumbnail?.path }}.{{ character.thumbnail?.extension }} "
+    alt="{{ character.name }}"
+    class="cardImage"
+  />
+
+  <mat-card-content>
+    <p class="description">
+      {{
+        character.description.length > 200
+          ? (character.description | slice: 0:150) + "..."
+          : character.description
+      }}
+    </p>
+  </mat-card-content>
+  <mat-card-footer>
+    <button mat-button>
+      Ler mais
+      <mat-icon aria-hidden="false" aria-label="ícone de seta">
+        navigate_next
+      </mat-icon>
+    </button>
+  </mat-card-footer>
+</mat-card>

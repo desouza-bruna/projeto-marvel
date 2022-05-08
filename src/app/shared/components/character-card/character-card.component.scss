@@ -1,0 +1,31 @@
+.card {
+  max-width: 300px;
+  min-height: 500px;
+  max-height: 500px;
+}
+
+.cardImage {
+  min-height: 300px;
+  max-height: 300px;
+  object-fit: cover;
+}
+
+.description {
+  text-align: justify;
+}
+
+mat-card {
+  display: flex;
+  flex-direction: column;
+}
+
+mat-card-header {
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+}
+
+mat-card-content {
+  flex-grow: 1;
+  overflow: auto;
+}
