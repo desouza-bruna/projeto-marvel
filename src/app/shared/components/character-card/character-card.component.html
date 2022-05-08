@@ -11,19 +11,10 @@
 
   <mat-card-content>
     <p class="description">
-      {{
-        character.description.length > 200
-          ? (character.description | slice: 0:150) + "..."
-          : character.description
-      }}
+      {{ character.description }}
     </p>
   </mat-card-content>
   <mat-card-footer>
-    <button mat-button>
-      Ler mais
-      <mat-icon aria-hidden="false" aria-label="ícone de seta">
-        navigate_next
-      </mat-icon>
-    </button>
+    <a href="{{ character.urls[0].url }}" target="_blank" fxFlex mat-flat-button color="primary"> Mais Detalhes </a>
   </mat-card-footer>
 </mat-card>

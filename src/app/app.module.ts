@@ -1,4 +1,3 @@
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -11,7 +10,6 @@ import { CoreModule } from './core/core.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CharactersComponent } from './pages/characters/characters.component';
 
-
 @NgModule({
   declarations: [AppComponent, CharactersComponent],
   imports: [
@@ -21,7 +19,6 @@ import { CharactersComponent } from './pages/characters/characters.component';
     CoreModule,
     SharedModule,
     HttpClientModule,
-    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent],

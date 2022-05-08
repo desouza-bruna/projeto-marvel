@@ -18,7 +18,7 @@ export class CharactersService {
   fetchCaracters(): Observable<any> {
     return this.http.get<any>(
       this.apiMarvel.concat(
-        'characters?limit=32&orderBy=-name&apikey=' + this.publicKey
+        'characters?limit=50&orderBy=-name&apikey=' + this.publicKey
       ),
       this.httpOptions
     );

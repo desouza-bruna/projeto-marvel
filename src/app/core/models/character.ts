@@ -4,7 +4,7 @@ export interface Character {
   description?: string;
   modified?: string;
   resourceURI?: string;
-  urls?: URL;
+  urls?: Url[];
   thumbnail?: Thumbnail;
   comics?: General;
   stories?: General;
@@ -12,7 +12,7 @@ export interface Character {
   series?: General;
 }
 
-interface URL {
+interface Url {
   type: string;
   url: string;
 }
