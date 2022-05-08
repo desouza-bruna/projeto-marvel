@@ -10,10 +10,17 @@
   >
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="#">Home</a>
-      <a mat-list-item href="#">Personagens</a>
-      <a mat-list-item href="#">Filmes</a>
-      <a mat-list-item href="#">Quadrinhos</a>
+      <a
+        mat-list-item
+        [routerLink]="['./']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        Personagens
+      </a>
+      <a mat-list-item routerLink="/filmes">Filmes</a>
+      <a mat-list-item routerLink="/series">Séries</a>
+      <a mat-list-item routerLink="/quadrinhos">Quadrinhos</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -32,8 +39,15 @@
       </span>
       <span class="spacer"></span>
       <div class="menuLinks" *ngIf="!(isHandset$ | async)">
-        <a mat-button href="#"> Personagens </a>
-        <a mat-button href="#">Séries</a>
+        <a
+          mat-button
+          [routerLink]="['./']"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          Personagens
+        </a>
+        <a mat-button routerLink="/series">Séries</a>
         <a mat-button href="#">Filmes</a>
         <a mat-button href="#"> Quadrinhos </a>
       </div>
