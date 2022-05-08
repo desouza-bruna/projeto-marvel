@@ -7,9 +7,14 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ComicCardComponent } from './components/comic-card/comic-card.component';
 
 @NgModule({
-  declarations: [CharacterCardComponent, ProgressBarComponent],
+  declarations: [
+    CharacterCardComponent,
+    ProgressBarComponent,
+    ComicCardComponent,
+  ],
   imports: [
     CommonModule,
     MatCardModule,
@@ -18,6 +23,11 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatIconModule,
     FlexLayoutModule,
   ],
-  exports: [CharacterCardComponent, ProgressBarComponent, FlexLayoutModule],
+  exports: [
+    CharacterCardComponent,
+    ProgressBarComponent,
+    FlexLayoutModule,
+    ComicCardComponent,
+  ],
 })
 export class SharedModule {}

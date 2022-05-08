@@ -1,0 +1,14 @@
+<app-progress-bar *ngIf="!comics"></app-progress-bar>
+<div class="content" *ngIf="comics">
+  <div fxLayoutAlign="center" fxLayout="row wrap" fxLayoutGap="16px grid">
+    <div
+      fxFlex="30%"
+      fxFlex.xs="100%"
+      fxFlex.md="33%"
+      fxFlex.sm="50%"
+      *ngFor="let comic of filteredComic"
+    >
+      <app-comic-card [comic]="comic"></app-comic-card>
+    </div>
+  </div>
+</div>

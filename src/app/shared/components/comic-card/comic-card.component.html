@@ -1,0 +1,28 @@
+<mat-card class="card">
+  <mat-card-title-group>
+    <mat-card-title>{{ comic.title }}</mat-card-title>
+    <mat-card-subtitle>{{ comic.format }}</mat-card-subtitle>
+    <img
+      mat-card-lg-image
+      src="{{ comic.thumbnail?.path }}.{{ comic.thumbnail?.extension }} "
+      class="cardImage"
+      alt="{{ comic.title }}"
+    />
+  </mat-card-title-group>
+  <mat-card-content>
+    <p class="description">
+      {{ comic.description }}
+    </p>
+  </mat-card-content>
+  <mat-card-footer>
+    <a
+      href="{{ comic.urls[0].url }}"
+      target="_blank"
+      fxFlex
+      mat-flat-button
+      color="primary"
+    >
+      Mais Detalhes
+    </a>
+  </mat-card-footer>
+</mat-card>

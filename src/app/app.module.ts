@@ -9,9 +9,10 @@ import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CharactersComponent } from './pages/characters/characters.component';
+import { ComicsComponent } from './pages/comics/comics.component';
 
 @NgModule({
-  declarations: [AppComponent, CharactersComponent],
+  declarations: [AppComponent, CharactersComponent, ComicsComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

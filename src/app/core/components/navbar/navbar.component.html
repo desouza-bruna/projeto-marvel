@@ -18,9 +18,13 @@
       >
         Personagens
       </a>
-      <a mat-list-item routerLink="/filmes">Filmes</a>
-      <a mat-list-item routerLink="/series">Séries</a>
-      <a mat-list-item routerLink="/quadrinhos">Quadrinhos</a>
+      <a
+        mat-list-item
+        routerLink="/quadrinhos"
+        [routerLink]="['/quadrinhos']"
+        routerLinkActive="active"
+        >Quadrinhos</a
+      >
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -47,9 +51,9 @@
         >
           Personagens
         </a>
-        <a mat-button routerLink="/series">Séries</a>
-        <a mat-button href="#">Filmes</a>
-        <a mat-button href="#"> Quadrinhos </a>
+        <a mat-button [routerLink]="['/quadrinhos']" routerLinkActive="active">
+          Quadrinhos
+        </a>
       </div>
     </mat-toolbar>
     <ng-content></ng-content>
