@@ -8,12 +8,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ComicCardComponent } from './components/comic-card/comic-card.component';
+import { SerieCardComponent } from './components/serie-card/serie-card.component';
 
 @NgModule({
   declarations: [
     CharacterCardComponent,
     ProgressBarComponent,
     ComicCardComponent,
+    SerieCardComponent,
   ],
   imports: [
     CommonModule,
@@ -28,6 +30,7 @@ import { ComicCardComponent } from './components/comic-card/comic-card.component
     ProgressBarComponent,
     FlexLayoutModule,
     ComicCardComponent,
+    SerieCardComponent
   ],
 })
 export class SharedModule {}

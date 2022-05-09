@@ -12,12 +12,12 @@ export interface Character {
   series?: General;
 }
 
-interface Url {
+export interface Url {
   type: string;
   url: string;
 }
 
-interface Thumbnail {
+export interface Thumbnail {
   extension?: string;
   path?: string;
 }

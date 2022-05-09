@@ -1,3 +1,4 @@
+import { Serie } from 'src/app/core/models/series';
 import { SerieService } from './../../core/services/serie.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./series.component.scss'],
 })
 export class SeriesComponent implements OnInit {
-  series: any = null;
+  series: Serie[];
   constructor(private serieService: SerieService) {}
 
   ngOnInit() {

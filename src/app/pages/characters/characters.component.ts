@@ -8,7 +8,7 @@ import { CharactersService } from 'src/app/core/services/characters.service';
   styleUrls: ['./characters.component.scss'],
 })
 export class CharactersComponent implements OnInit {
-  characters: Character[] = [];
+  characters: Character[];
 
   constructor(private characterService: CharactersService) {}
 
@@ -28,8 +28,6 @@ export class CharactersComponent implements OnInit {
   }
 
   get filteredCharacter() {
-    return this.characters.filter(
-      (character: Character) => character.description != ''
-    );
+    return this.characters.filter((character) => character.description != '');
   }
 }

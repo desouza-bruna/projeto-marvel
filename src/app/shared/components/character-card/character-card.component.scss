@@ -14,6 +14,10 @@
   text-align: justify;
 }
 
+.detailButton:hover {
+  background-color: #631684;
+}
+
 mat-card {
   display: flex;
   flex-direction: column;

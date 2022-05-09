@@ -8,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CharacterCardComponent implements OnInit {
   @Input() character: Character;
-
+  
   constructor() {}
 
   ngOnInit() {}

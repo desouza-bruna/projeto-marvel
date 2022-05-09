@@ -1,3 +1,4 @@
+import { Comic } from './../../core/models/comic';
 import { Component, OnInit } from '@angular/core';
 import { ComicService } from 'src/app/core/services/comic.service';
 
@@ -7,7 +8,7 @@ import { ComicService } from 'src/app/core/services/comic.service';
   styleUrls: ['./comics.component.scss'],
 })
 export class ComicsComponent implements OnInit {
-  comics: any = null;
+  comics: Comic[];
   constructor(private comicService: ComicService) {}
 
   ngOnInit() {
@@ -18,7 +19,6 @@ export class ComicsComponent implements OnInit {
     this.comicService.fetchComics().subscribe(
       (response) => {
         this.comics = response.data.results;
-        console.log(this.comics);
       },
       (error) => {
         console.log(error);
@@ -27,6 +27,8 @@ export class ComicsComponent implements OnInit {
   }
 
   get filteredComic() {
-    return this.comics.filter((comic) => comic.description && comic.description.length > 5);
+    return this.comics.filter(
+      (comic) => comic.description && comic.description.length > 5
+    );
   }
 }

@@ -1,24 +1,25 @@
 <mat-card class="card">
-  <mat-card-header>
-    <mat-card-title>
-      {{ character.name }}
-    </mat-card-title>
-  </mat-card-header>
   <img
     mat-card-image
-    src="{{ character.thumbnail?.path }}.{{ character.thumbnail?.extension }} "
-    alt="{{ character.name }}"
+    src="{{ serie.thumbnail?.path }}.{{ serie.thumbnail?.extension }} "
+    alt="{{ serie.title }}"
     class="cardImage"
   />
 
   <mat-card-content>
+    <mat-card-title>
+      {{ serie.title }}
+    </mat-card-title>
+    <mat-card-subtitle>
+      {{ serie.type }}
+    </mat-card-subtitle>
     <p class="description">
-      {{ character.description }}
+      {{ serie.description }}
     </p>
   </mat-card-content>
   <mat-card-footer>
     <a
-      href="{{ character.urls[0].url }}"
+      href="{{ serie.urls[0].url }}"
       target="_blank"
       fxFlex
       mat-flat-button

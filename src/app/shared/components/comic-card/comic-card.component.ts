@@ -1,5 +1,6 @@
 import { Input } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
+import { Comic } from 'src/app/core/models/comic';
 
 @Component({
   selector: 'app-comic-card',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./comic-card.component.scss'],
 })
 export class ComicCardComponent implements OnInit {
-  @Input() comic: any;
+  @Input() comic: Comic;
   constructor() {}
 
   ngOnInit(): void {}
