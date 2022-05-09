@@ -1,3 +1,4 @@
+import { ToastrService } from 'ngx-toastr';
 import { Character } from './../../core/models/character';
 import { Component, OnInit } from '@angular/core';
 import { CharactersService } from 'src/app/core/services/characters.service';
@@ -10,7 +11,10 @@ import { CharactersService } from 'src/app/core/services/characters.service';
 export class CharactersComponent implements OnInit {
   characters: Character[];
 
-  constructor(private characterService: CharactersService) {}
+  constructor(
+    private characterService: CharactersService,
+    public toastr: ToastrService
+  ) {}
 
   ngOnInit() {
     this.fetchCharacters();
@@ -22,7 +26,7 @@ export class CharactersComponent implements OnInit {
         this.characters = response.data.results;
       },
       (error) => {
-        console.log(error);
+        this.toastr.error('Não foi possível realizar a operação.', 'Erro!');
       }
     );
   }

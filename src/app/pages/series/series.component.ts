@@ -1,3 +1,4 @@
+import { ToastrService } from 'ngx-toastr';
 import { Serie } from 'src/app/core/models/series';
 import { SerieService } from './../../core/services/serie.service';
 import { Component, OnInit } from '@angular/core';
@@ -9,7 +10,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SeriesComponent implements OnInit {
   series: Serie[];
-  constructor(private serieService: SerieService) {}
+  constructor(
+    private serieService: SerieService,
+    public toastr: ToastrService
+  ) {}
 
   ngOnInit() {
     this.fetchSeries();
@@ -21,7 +25,7 @@ export class SeriesComponent implements OnInit {
         this.series = response.data.results;
       },
       (error) => {
-        console.log(error);
+        this.toastr.error('Não foi possível realizar a operação.', 'Erro!');
       }
     );
   }

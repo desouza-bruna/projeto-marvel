@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
@@ -12,8 +11,16 @@ import { CharactersComponent } from './pages/characters/characters.component';
 import { ComicsComponent } from './pages/comics/comics.component';
 import { SeriesComponent } from './pages/series/series.component';
 
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 @NgModule({
-  declarations: [AppComponent, CharactersComponent, ComicsComponent, SeriesComponent],
+  declarations: [
+    AppComponent,
+    CharactersComponent,
+    ComicsComponent,
+    SeriesComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -21,6 +28,9 @@ import { SeriesComponent } from './pages/series/series.component';
     CoreModule,
     SharedModule,
     HttpClientModule,
+
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({}),
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,6 +1,7 @@
 import { Comic } from './../../core/models/comic';
 import { Component, OnInit } from '@angular/core';
 import { ComicService } from 'src/app/core/services/comic.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-comics',
@@ -9,7 +10,10 @@ import { ComicService } from 'src/app/core/services/comic.service';
 })
 export class ComicsComponent implements OnInit {
   comics: Comic[];
-  constructor(private comicService: ComicService) {}
+  constructor(
+    private comicService: ComicService,
+    public toastr: ToastrService
+  ) {}
 
   ngOnInit() {
     this.fetchComics();
@@ -21,7 +25,7 @@ export class ComicsComponent implements OnInit {
         this.comics = response.data.results;
       },
       (error) => {
-        console.log(error);
+        this.toastr.error('Não foi possível realizar a operação.', 'Erro!');
       }
     );
   }
