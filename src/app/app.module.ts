@@ -28,7 +28,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CoreModule,
     SharedModule,
     HttpClientModule,
-
     BrowserAnimationsModule,
     ToastrModule.forRoot({}),
   ],
