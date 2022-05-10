@@ -1,27 +1,40 @@
 # ProjetoMarvel
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.0.
+Este projeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli) versão 12.0.0.
 
-## Development server
+## Instalação
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Após clonar o repositório, execute a instalação das dependências do projeto. Vá até a raiz do projeto e execute:
 
-## Code scaffolding
+```shell
+npm install
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Para rodar em ambiente de desenvolvimento execute:
 
-## Build
+```shell
+ng serve
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Navegue até `http://localhost:4200/`. O aplicativo será recarregado automaticamente se você alterar qualquer um dos arquivos de origem.
 
-## Running unit tests
+## Documentação
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Para rodar em ambiente de desenvolvimento execute:
 
-## Running end-to-end tests
+```shell
+npm run compodoc:serve
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice.
+A documentação será carregada no endereço `http://127.0.0.1:8080`.
 
-## Further help
+## Principais Bibliotecas:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+1. Angular Flex-layout: utilizado com o intuito de criar layouts de página baseados em FlexBox de maneira mais ágil.
+2. Angular Material: utilizado pois os componentes foram pensados especificamente para o Angular.
+3. Compodoc: utilizado para criação de documentação.
+4. Ts-MDS: utilizado para criação de Hash com Md5 para acessar API da Marvel.
+
+## Link da aplicação:
+
+https://projeto-marvel-frontend.web.app
