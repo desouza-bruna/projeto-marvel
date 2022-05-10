@@ -40,9 +40,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SerieCardComponent,
     SearchBarComponent,
     MatButtonModule,
-    MatInputModule,
-    MatIconModule,
-    MatCardModule,
   ],
 })
 export class SharedModule {}
