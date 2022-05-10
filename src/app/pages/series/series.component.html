@@ -1,5 +1,13 @@
 <app-progress-bar *ngIf="!series"></app-progress-bar>
 <div class="content" *ngIf="series">
+  <app-search-bar
+    [label]="'Série'"
+    [placeholder]="'Ex.: Thor'"
+    [url]="'series?titleStartsWith='"
+    (resultFound)="updateSeries($event)"
+    (clearedSearch)="clearSearch($event)"
+  ></app-search-bar>
+
   <div fxLayoutAlign="center" fxLayout="row wrap" fxLayoutGap="16px grid">
     <div
       fxFlex="25%"

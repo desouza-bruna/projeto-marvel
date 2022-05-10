@@ -1,5 +1,14 @@
 <app-progress-bar *ngIf="!characters"></app-progress-bar>
 <div class="content" *ngIf="characters">
+  <!--Search Bar-->
+  <app-search-bar
+    [label]="'Personagem'"
+    [placeholder]="'Ex.: Spider-Man'"
+    [url]="'characters?nameStartsWith='"
+    (resultFound)="updateCharacters($event)"
+    (clearedSearch)="clearSearch($event)"
+  ></app-search-bar>
+  <!--Character Card-->
   <div fxLayoutAlign="center" fxLayout="row wrap" fxLayoutGap="16px grid">
     <div
       fxFlex="30%"

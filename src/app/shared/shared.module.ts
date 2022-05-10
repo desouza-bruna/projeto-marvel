@@ -6,9 +6,12 @@ import { ProgressBarComponent } from './components/progress-bar/progress-bar.com
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ComicCardComponent } from './components/comic-card/comic-card.component';
 import { SerieCardComponent } from './components/serie-card/serie-card.component';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,6 +19,7 @@ import { SerieCardComponent } from './components/serie-card/serie-card.component
     ProgressBarComponent,
     ComicCardComponent,
     SerieCardComponent,
+    SearchBarComponent,
   ],
   imports: [
     CommonModule,
@@ -23,14 +27,22 @@ import { SerieCardComponent } from './components/serie-card/serie-card.component
     MatProgressBarModule,
     MatButtonModule,
     MatIconModule,
+    MatInputModule,
     FlexLayoutModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   exports: [
     CharacterCardComponent,
     ProgressBarComponent,
     FlexLayoutModule,
     ComicCardComponent,
-    SerieCardComponent
+    SerieCardComponent,
+    SearchBarComponent,
+    MatButtonModule,
+    MatInputModule,
+    MatIconModule,
+    MatCardModule,
   ],
 })
 export class SharedModule {}

@@ -9,7 +9,10 @@ import { CharactersService } from 'src/app/core/services/characters.service';
   styleUrls: ['./characters.component.scss'],
 })
 export class CharactersComponent implements OnInit {
+  originalSearch: Character[];
   characters: Character[];
+  searchResult: Character[];
+  researched: boolean = false;
 
   constructor(
     private characterService: CharactersService,
@@ -23,6 +26,7 @@ export class CharactersComponent implements OnInit {
   fetchCharacters() {
     this.characterService.fetchCaracters().subscribe(
       (response) => {
+        this.originalSearch = response.data.results;
         this.characters = response.data.results;
       },
       (error) => {
@@ -31,7 +35,21 @@ export class CharactersComponent implements OnInit {
     );
   }
 
+  updateCharacters(event) {
+    this.researched = true;
+    this.characters = event;
+  }
+
+  clearSearch(event) {
+    if (event) {
+      this.characters = this.originalSearch;
+      this.researched = false;
+    }
+  }
+
   get filteredCharacter() {
-    return this.characters.filter((character) => character.description != '');
+    return this.researched
+      ? this.characters
+      : this.characters.filter((character) => character.description != '');
   }
 }

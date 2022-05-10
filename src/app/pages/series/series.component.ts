@@ -9,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./series.component.scss'],
 })
 export class SeriesComponent implements OnInit {
+  originalSearch: Serie[];
   series: Serie[];
+  searchResult: Serie[];
+  researched: boolean = false;
+
   constructor(
     private serieService: SerieService,
     public toastr: ToastrService
@@ -22,6 +26,7 @@ export class SeriesComponent implements OnInit {
   fetchSeries() {
     this.serieService.fetchSeries().subscribe(
       (response) => {
+        this.originalSearch = response.data.results;
         this.series = response.data.results;
       },
       (error) => {
@@ -30,7 +35,21 @@ export class SeriesComponent implements OnInit {
     );
   }
 
+  updateSeries(event) {
+    this.researched = true;
+    this.series = event;
+  }
+
+  clearSearch(event) {
+    if (event) {
+      this.series = this.originalSearch;
+      this.researched = false;
+    }
+  }
+
   get filteredSeries() {
-    return this.series.filter((serie) => serie.description != null);
+    return this.researched
+      ? this.series
+      : this.series.filter((serie) => serie.description != null);
   }
 }

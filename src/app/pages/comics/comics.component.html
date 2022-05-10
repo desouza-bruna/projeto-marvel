@@ -1,5 +1,13 @@
 <app-progress-bar *ngIf="!comics"></app-progress-bar>
 <div class="content" *ngIf="comics">
+  <app-search-bar
+    [label]="'Quadrinhos'"
+    [placeholder]="'Ex.: Civil War'"
+    [url]="'comics?titleStartsWith='"
+    (resultFound)="updateComics($event)"
+    (clearedSearch)="clearSearch($event)"
+  ></app-search-bar>
+
   <div fxLayoutAlign="center" fxLayout="row wrap" fxLayoutGap="16px grid">
     <div
       fxFlex="30%"

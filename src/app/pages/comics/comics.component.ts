@@ -9,7 +9,11 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./comics.component.scss'],
 })
 export class ComicsComponent implements OnInit {
+  originalSearch: Comic[];
   comics: Comic[];
+  searchResult: Comic[];
+  researched: boolean = false;
+
   constructor(
     private comicService: ComicService,
     public toastr: ToastrService
@@ -22,6 +26,7 @@ export class ComicsComponent implements OnInit {
   fetchComics() {
     this.comicService.fetchComics().subscribe(
       (response) => {
+        this.originalSearch = response.data.results;
         this.comics = response.data.results;
       },
       (error) => {
@@ -30,9 +35,23 @@ export class ComicsComponent implements OnInit {
     );
   }
 
+  updateComics(event) {
+    this.researched = true;
+    this.comics = event;
+  }
+
+  clearSearch(event) {
+    if (event) {
+      this.comics = this.originalSearch;
+      this.researched = false;
+    }
+  }
+
   get filteredComic() {
-    return this.comics.filter(
-      (comic) => comic.description && comic.description.length > 5
-    );
+    return this.researched
+      ? this.comics
+      : this.comics.filter(
+          (comic) => comic.description && comic.description.length > 5
+        );
   }
 }
